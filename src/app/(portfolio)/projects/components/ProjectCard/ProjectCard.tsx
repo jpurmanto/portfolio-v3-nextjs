@@ -34,7 +34,6 @@ export default async function ProjectCard({
       <Box
         maxW={"445px"}
         w={"full"}
-        // eslint-disable-next-line react-hooks/rules-of-hooks
         bg={"white"}
         boxShadow={"xl"}
         rounded={"xl"}
@@ -55,7 +54,6 @@ export default async function ProjectCard({
             {category}
           </Text>
           <Heading
-            // eslint-disable-next-line react-hooks/rules-of-hooks
             color={"gray.700"}
             fontSize={{ base: "md", sm: "2xl" }}
             fontFamily={"body"}

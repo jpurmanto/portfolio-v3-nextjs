@@ -77,7 +77,7 @@ const HomeComponent = () => {
                 <Heading
                   fontSize={{ base: "3xl", sm: "3xl", md: "4xl", lg: "5xl" }}
                 >
-                  Hi, I'm
+                  Hi, I&apos;m
                 </Heading>
                 <Heading
                   as={"h3"}
