@@ -1,4 +1,14 @@
-const certificateList = [
+export type Certificate = {
+  id: number;
+  from: string;
+  title: string;
+  blurDataURL?: string;
+  img: string;
+  altImg: string;
+  dateObtained: string;
+};
+
+const certificateList: Certificate[] = [
   {
     id: 1,
     from: "IDCamp 2023",
