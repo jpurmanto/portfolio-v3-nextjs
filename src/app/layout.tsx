@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "IrfanKS | Portfolios",
   openGraph: {
     images: {
-      url: "https://irfankurniawansuthiono.github.io/irfanks/irfanks.png",
+      url: "https://www.irfanks.my.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile-picture.234d8074.webp&w=1920&q=75",
     },
   },
   icons: {

@@ -1,4 +1,3 @@
-"use server";
 import { Box, Container, Text } from "@chakra-ui/react";
 export default async function Footer() {
   const year = new Date().getFullYear();

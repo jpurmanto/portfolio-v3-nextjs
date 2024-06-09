@@ -1,4 +1,3 @@
-"use server";
 import { Container, Flex } from "@chakra-ui/react";
 import ProfileComponent from "./components/Profile/Profile";
 import AboutComponent from "./components/About/About";

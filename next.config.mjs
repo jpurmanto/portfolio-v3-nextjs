@@ -1,5 +1,9 @@
-/** @type {import('next').NextConfig} */
+// @ts-check
+import withPlaiceholder from "@plaiceholder/next";
 
-const nextConfig = {};
+/**
+ * @type {import('next').NextConfig}
+ */
+const config = {};
 
-export default nextConfig;
+export default withPlaiceholder(config);

@@ -1,22 +1,19 @@
 "use client";
-import { Box, Center, Image } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import { usePreviewCertificate } from "@/app/utils/Zustand";
 import { IoMdEye } from "react-icons/io";
 import { useRouter } from "next/navigation";
-type CertificateCardProps = {
-  id: number;
-  from: string;
-  title: string;
-  img: string;
-  altImg: string;
-  dateObtained: string;
-};
+import type { Certificate } from "../../../../../../public/assets/CertificateList/CertificateList";
+import Image from "next/image";
+
+type CertificateCardProps = Certificate;
 
 export default function CertificateCard({
   id,
   img,
   altImg,
+  blurDataURL,
 }: CertificateCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -28,6 +25,7 @@ export default function CertificateCard({
   };
   const router = useRouter();
   const clickHandle = (id: number) => {
+    document.body.style.overflow = "hidden";
     usePreviewCertificate.setState({ previewCertificate: true });
     router.push(`#certificate_${id}`, { scroll: false });
   };
@@ -52,7 +50,15 @@ export default function CertificateCard({
         h={"100%"}
       >
         <Box bg={"gray.200"}>
-          <Image src={img} alt={altImg} loading="lazy" />
+          <Image
+            src={img}
+            alt={altImg}
+            loading="lazy"
+            height={283}
+            width={445}
+            placeholder="blur"
+            blurDataURL={blurDataURL}
+          />
           {isHovered && (
             <Box
               className="animate__animated animate__fadeIn animate__faster"

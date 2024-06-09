@@ -1,4 +1,3 @@
-"use server";
 import {
   Container,
   Box,
@@ -97,7 +96,7 @@ const HomeComponent = () => {
                 fontSize={{ base: "sm", sm: "md" }}
                 flexDir={"row"}
                 alignItems={"center"}
-                justifyContent={{ base: "flex-start", sm: "center" }}
+                justifyContent={{ base: "center" }}
               >
                 <Text>Active Student at&nbsp;</Text>
                 <Box

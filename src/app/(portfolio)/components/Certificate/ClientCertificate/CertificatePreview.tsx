@@ -23,6 +23,7 @@ export default function CertificatePreview() {
   const router = useRouter();
   const ref = useRef(null);
   const closeHandler = () => {
+    document.body.style.overflow = "auto";
     usePreviewCertificate.setState({ previewCertificate: false });
     router.replace("/", { scroll: false });
   };
