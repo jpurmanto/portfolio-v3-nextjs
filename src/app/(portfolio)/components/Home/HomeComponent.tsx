@@ -97,7 +97,7 @@ const HomeComponent = () => {
                 fontSize={{ base: "sm", sm: "md" }}
                 flexDir={"row"}
                 alignItems={"center"}
-                justifyContent={{ base: "flex-start", sm: "center" }}
+                justifyContent={{ base: "center" }}
               >
                 <Text>Active Student at&nbsp;</Text>
                 <Box
@@ -111,7 +111,6 @@ const HomeComponent = () => {
                   <Flex
                     fontSize={{ base: "sm", sm: "md" }}
                     alignItems={"center"}
-                    justifyContent={"center"}
                     gap={1}
                   >
                     UPI YPTK
