@@ -113,7 +113,7 @@ const HomeComponent = () => {
                     alignItems={"center"}
                     gap={1}
                   >
-                    UPI YPTK Padang
+                    UPI YPTK
                     <IconMdOpenInNew />
                   </Flex>
                 </Box>
