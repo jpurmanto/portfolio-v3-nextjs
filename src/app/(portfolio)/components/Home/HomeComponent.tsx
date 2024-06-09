@@ -111,6 +111,7 @@ const HomeComponent = () => {
                   <Flex
                     fontSize={{ base: "sm", sm: "md" }}
                     alignItems={"center"}
+                    justifyContent={"center"}
                     gap={1}
                   >
                     UPI YPTK
