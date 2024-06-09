@@ -141,7 +141,6 @@ const ProjectList = [
     img: "/projects/14.webp",
     altImg: "14.webp",
     dateFinished: "2023",
-    liveView: "https://irfanks.vercel.app/",
     repository:
       "https://github.com/irfankurniawansuthiono/portfolio-v3",
   },
@@ -154,7 +153,17 @@ const ProjectList = [
     dateFinished: "2024",
     repository:
       "https://github.com/irfankurniawansuthiono/form-mobileApps",
-  },
+  },{
+    id: 16,
+    category: "Portfolio",
+    title: "Portfolio - NextJS",
+    img: "/projects/14.webp",
+    altImg: "16.webp",
+    dateFinished: "2024",
+    liveView: "https://irfanks.my.id/",
+    repository:
+      "https://github.com/irfankurniawansuthiono/portfolio-v3-nextjs",
+  }
 ];
 
 export default ProjectList;
