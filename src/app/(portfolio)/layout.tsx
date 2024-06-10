@@ -6,7 +6,6 @@ export default function Layout(props: any) {
     <>
       <NavbarComponent />
       {props.children}
-      {props.test}
       <BackToTop />
       <Footer />
     </>
