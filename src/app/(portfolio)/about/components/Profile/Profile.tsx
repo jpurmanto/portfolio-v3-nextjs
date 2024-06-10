@@ -1,5 +1,3 @@
-"use server";
-
 import {
   AbsoluteCenter,
   Divider,
@@ -11,7 +9,7 @@ import {
 import Image from "next/image";
 import TechStackListComponent from "./ClientProfile/TechStackList";
 import ProfilePicture from "../../../../../../public/home/profile-picture.webp";
-export default async function ProfileComponent() {
+export default function ProfileComponent() {
   const year = new Date().getFullYear();
 
   return (

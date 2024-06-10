@@ -1,5 +1,5 @@
 import { Box, Container, Text } from "@chakra-ui/react";
-export default async function Footer() {
+export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <Container

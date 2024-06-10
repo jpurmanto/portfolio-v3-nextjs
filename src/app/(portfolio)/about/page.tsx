@@ -1,7 +1,7 @@
 import { Container, Flex } from "@chakra-ui/react";
 import ProfileComponent from "./components/Profile/Profile";
 import AboutComponent from "./components/About/About";
-export default async function About() {
+export default function About() {
   return (
     <Container maxW={"7xl"} userSelect={"none"}>
       <Flex

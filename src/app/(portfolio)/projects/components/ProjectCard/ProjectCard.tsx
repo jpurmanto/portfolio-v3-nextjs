@@ -1,4 +1,3 @@
-"use server";
 import {
   Box,
   Center,
@@ -20,7 +19,7 @@ type CertificateCardProps = {
   repository?: string;
   liveView?: string;
 };
-export default async function ProjectCard({
+export default function ProjectCard({
   category,
   title,
   img,

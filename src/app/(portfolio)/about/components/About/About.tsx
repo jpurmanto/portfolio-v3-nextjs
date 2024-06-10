@@ -1,9 +1,8 @@
-"use server";
 import { Box, Flex, Heading, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { GrProjects } from "react-icons/gr";
 
-export default async function AboutComponent() {
+export default function AboutComponent() {
   return (
     <Flex
       bg={"whitesmoke"}
