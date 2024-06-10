@@ -26,12 +26,15 @@ export const metadata: Metadata = {
     "Personal website of Irfan Kurniawan Suthiono | Portfolio. This is the website about my self and where I share all of my projects.",
 };
 
-export default function RootLayout(props: any) {
-  console.log(props);
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ChakraProvider>{props.children}</ChakraProvider>
+        <ChakraProvider>{children}</ChakraProvider>
       </body>
     </html>
   );
