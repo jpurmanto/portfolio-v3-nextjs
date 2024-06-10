@@ -93,7 +93,6 @@ export default function CertificateCard({
                 layoutId={id.toString()}
                 src={img}
                 alt={altImg}
-                loading="lazy"
                 placeholder="blur"
                 height={849}
                 width={1335}
