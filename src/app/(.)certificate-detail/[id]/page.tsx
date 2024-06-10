@@ -12,6 +12,7 @@ export default function CertificateDetailModal(props: any) {
       </Text>
 
       <Image
+        className="animate__animated animate__zoomIn"
         src={certificateList[id - 1].img}
         width={{ base: "90vw", xl: "120vh" }}
         alt={certificateList[id - 1].altImg}
