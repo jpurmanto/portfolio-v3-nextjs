@@ -1,6 +1,6 @@
 import certificateList, {
   type Certificate,
-} from "../../../../../../public/assets/CertificateList/CertificateList";
+} from "~/assets/CertificateList/CertificateList";
 import CertificateCard from "./CertificateCard";
 import { getBlur } from "@/app/utils/GetBlur";
 

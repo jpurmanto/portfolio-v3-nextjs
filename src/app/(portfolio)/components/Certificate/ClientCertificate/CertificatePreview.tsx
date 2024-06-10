@@ -8,9 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { useRouter } from "next/navigation";
-import { usePreviewCertificate } from "@/app/utils/Zustand";
 import { useOnClickOutside } from "usehooks-ts";
-import certificateList from "../../../../../../public/assets/CertificateList/CertificateList";
+import certificateList from "~/assets/CertificateList/CertificateList";
 // import required modules
 import {
   Pagination,
@@ -24,7 +23,6 @@ export default function CertificatePreview() {
   const ref = useRef(null);
   const closeHandler = () => {
     document.body.style.overflow = "auto";
-    usePreviewCertificate.setState({ previewCertificate: false });
     router.replace("/", { scroll: false });
   };
 

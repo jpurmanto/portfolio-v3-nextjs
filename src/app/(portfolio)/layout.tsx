@@ -1,15 +1,13 @@
 import BackToTop from "./components/BackToTopButton/BackToTop";
 import Footer from "./components/Footer/Footer";
 import { NavbarComponent } from "./components/Navbar/Navbar";
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout(props: any) {
+  console.log(props);
   return (
     <>
       <NavbarComponent />
-      {children}
+      {props.children}
+      {props.test}
       <BackToTop />
       <Footer />
     </>

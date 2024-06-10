@@ -8,7 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import ProfilePicture from "../../../../../public/home/profile-picture.webp";
+import ProfilePicture from "~/home/profile-picture.webp";
 import "animate.css";
 import Link from "next/link";
 import { IoMdDownload } from "react-icons/io";
@@ -156,7 +156,7 @@ const HomeComponent = () => {
                 rounded={"xl"}
                 leftIcon={<IoMdDownload />}
               >
-                CV Download
+                Download CV
               </Button>
               <Button
                 as={Link}

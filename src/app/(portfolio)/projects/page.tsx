@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import "animate.css";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
-import ProjectList from "../../../../public/assets/ProjectsList/ProjectsList";
+import ProjectList from "~/assets/ProjectsList/ProjectsList";
 export default async function Project() {
   return (
     <Container maxW={"7xl"} userSelect={"none"}>

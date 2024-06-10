@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 // layouts navbar
 
 export const metadata: Metadata = {
-  title: "IrfanKS | Portfolios",
+  title: "IrfanKS | Portfolio",
   openGraph: {
     images: {
       url: "https://www.irfanks.my.id/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fprofile-picture.234d8074.webp&w=1920&q=75",
@@ -19,9 +19,6 @@ export const metadata: Metadata = {
     {
       name: "Irfan Kurniawan Suthiono",
     },
-    {
-      name: "IrfanKS",
-    },
   ],
   keywords:
     "Portfolio, Irfan Kurniawan Suthiono, web developer, web developer padang, web developer profesional, developer padang, it padang, jasa website padang, irfanks, irfan kurniawan suthiono, irfan web developer, irfan developer, developer react js, developer reac js di padang",
@@ -29,15 +26,12 @@ export const metadata: Metadata = {
     "Personal website of Irfan Kurniawan Suthiono | Portfolio. This is the website about my self and where I share all of my projects.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout(props: any) {
+  console.log(props);
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ChakraProvider>{children}</ChakraProvider>
+        <ChakraProvider>{props.children}</ChakraProvider>
       </body>
     </html>
   );

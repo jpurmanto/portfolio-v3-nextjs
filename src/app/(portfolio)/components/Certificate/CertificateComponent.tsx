@@ -7,8 +7,8 @@ import {
   Divider,
   AbsoluteCenter,
 } from "@chakra-ui/react";
-import certificateList from "../../../../../public/assets/CertificateList/CertificateList";
-import CertificateListCardMap from "./ClientCertificate/CertificateListCardMap";
+import certificateList from "~/assets/CertificateList/CertificateList";
+import CertificateListCardMap from "./ServerCertificate/CertificateListCardMap";
 export default function CertificateComponent() {
   return (
     <Container maxW={"7xl"} mt={8}>
