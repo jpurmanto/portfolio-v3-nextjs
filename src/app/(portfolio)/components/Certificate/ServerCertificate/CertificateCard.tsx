@@ -1,6 +1,5 @@
 "use client";
-import { Box, Flex } from "@chakra-ui/react";
-import { Image as ImageChakra } from "@chakra-ui/react";
+import { Box, Flex, Image as ImageChakra } from "@chakra-ui/react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Certificate } from "~/assets/CertificateList/CertificateList";
@@ -30,10 +29,10 @@ export default function CertificateCard({
 
   const MotionImageNextJS = motion(Image);
   const MotionBox = motion(Box);
-  const MotionImageChakra = motion(ImageChakra);
   const MotionFlex = motion(Flex);
 
   const containerID = `container_${id}`;
+  const containerFlexID = `containerFlex_${id}`;
   return (
     <>
       <MotionFlex
@@ -44,18 +43,18 @@ export default function CertificateCard({
           cursor: "pointer",
         }}
         filter={"grayscale(100%)"}
-        layoutId={containerID}
+        layoutId={containerFlexID}
         whileHover={{ scale: 1.05, filter: "grayscale(0%)" }}
       >
         <MotionBox
-          maxW={445}
           borderRadius={"xl"}
           overflow={"hidden !important"}
-          layoutId={id.toString()}
           alignItems={"center"}
+          layoutId={containerID}
           justifyContent={"center"}
         >
           <MotionImageNextJS
+            layoutId={id.toString()}
             src={img}
             alt={altImg}
             loading="lazy"
@@ -69,9 +68,7 @@ export default function CertificateCard({
       <AnimatePresence>
         {selectedId === id.toString() && (
           <MotionFlex
-            initial={{ backgroundColor: "transparent" }}
-            animate={{ backgroundColor: "rgba(0,0,0,0.8)" }}
-            layoutId={containerID}
+            bgColor={"rgba(0,0,0,0.8)"}
             userSelect={"none"}
             top={0}
             left={0}
@@ -82,13 +79,27 @@ export default function CertificateCard({
             justifyContent={"center"}
             zIndex={9999}
           >
-            <MotionImageChakra
+            <MotionBox
+              borderRadius={"xl"}
+              overflow={"hidden !important"}
+              alignItems={"center"}
+              justifyContent={"center"}
+              layoutId={containerID}
               ref={ref}
-              src={img}
-              alt={altImg}
+              bgColor={"gray"}
               width={{ base: "90vw", xl: "120vh" }}
-              layoutId={id.toString()}
-            />
+            >
+              <MotionImageNextJS
+                layoutId={id.toString()}
+                src={img}
+                alt={altImg}
+                loading="lazy"
+                placeholder="blur"
+                height={849}
+                width={1335}
+                blurDataURL={blurDataURL}
+              />
+            </MotionBox>
           </MotionFlex>
         )}
       </AnimatePresence>
