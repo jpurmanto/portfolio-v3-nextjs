@@ -31,6 +31,7 @@ const BackToTop = () => {
       style={{ position: "fixed", bottom: "2rem", right: "2rem" }}
     >
       <Button
+        display={isVisible ? "block" : "none"}
         rounded="xl"
         onClick={scrollToTop}
         colorScheme="yellow"

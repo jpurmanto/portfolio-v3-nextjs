@@ -43,7 +43,12 @@ export default function ClientNavbar() {
     >
       <Flex alignItems={"center"} gap={2}>
         <Icon as={item.icon} />
-        <Text display={{ base: "none", sm: "block" }}>{item.name}</Text>
+        <Text
+          display={{ base: "none", sm: "block" }}
+          fontSize={{ base: "none", sm: "smaller", md: "medium" }}
+        >
+          {item.name}
+        </Text>
       </Flex>
     </Button>
   ));

@@ -43,6 +43,9 @@ export default function CertificateComponent() {
           Click on certificate to preview
         </Heading>
         <SimpleGrid
+          userSelect={"none"}
+          alignItems={"center"}
+          justifyContent={"center"}
           mt={{ base: 5, lg: 10 }}
           columns={{ base: 1, md: 2, lg: 3 }}
           spacingY={5}
