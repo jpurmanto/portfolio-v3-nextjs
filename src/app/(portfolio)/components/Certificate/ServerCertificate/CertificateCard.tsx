@@ -1,9 +1,10 @@
+"use client";
 import { Box, Flex } from "@chakra-ui/react";
+import { Image as ImageChakra } from "@chakra-ui/react";
 import Image from "next/image";
-import Link from "next/link";
-
+import { motion, AnimatePresence } from "framer-motion";
 import type { Certificate } from "~/assets/CertificateList/CertificateList";
-
+import { useState, useEffect } from "react";
 type CertificateCardProps = Certificate;
 
 export default function CertificateCard({
@@ -12,9 +13,25 @@ export default function CertificateCard({
   altImg,
   blurDataURL,
 }: CertificateCardProps) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  useEffect(() => {
+    if (selectedId) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [selectedId]);
+
+  const MotionImageChakra = motion(ImageChakra);
+  const MotionFlex = motion(Flex);
   return (
-    <Link href={`/certificate-detail/${id}`} scroll={false}>
-      <Flex justifyContent={"center"} alignItems={"center"}>
+    <>
+      <MotionFlex
+        onClick={() => setSelectedId(id.toString())}
+        layoutId={id.toString()}
+        justifyContent={"center"}
+        alignItems={"center"}
+      >
         <Box
           maxW={445}
           _hover={{
@@ -37,7 +54,33 @@ export default function CertificateCard({
             blurDataURL={blurDataURL}
           />
         </Box>
-      </Flex>
-    </Link>
+      </MotionFlex>
+      <AnimatePresence>
+        {selectedId === id.toString() && (
+          <MotionFlex
+            userSelect={"none"}
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            pos={"fixed"}
+            display={"flex"}
+            flexDir={"column"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            zIndex={999}
+            onClick={() => setSelectedId(null)}
+            bgColor={"rgba(0,0,0,0.8)"}
+          >
+            <MotionImageChakra
+              layoutId={id.toString()}
+              src={img}
+              alt={altImg}
+              width={{ base: "90vw", xl: "120vh" }}
+            />
+          </MotionFlex>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
