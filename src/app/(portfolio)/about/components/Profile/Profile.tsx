@@ -1,4 +1,3 @@
-// pages/profile.tsx
 import {
   AbsoluteCenter,
   Divider,
@@ -26,7 +25,6 @@ const ProfileComponent = async () => {
       };
     })
   );
-
   const year = new Date().getFullYear();
 
   return (

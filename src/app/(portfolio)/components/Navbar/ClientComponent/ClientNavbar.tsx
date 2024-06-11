@@ -6,8 +6,6 @@ import { FiPhone } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { GrProjects } from "react-icons/gr";
 import { usePathname } from "next/navigation";
-import AudioPlayer from "../../AudioPlayer/AudioPlayer";
-
 export default function ClientNavbar() {
   const location = usePathname();
   const buttonList = [

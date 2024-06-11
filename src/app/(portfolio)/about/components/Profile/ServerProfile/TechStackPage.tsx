@@ -1,4 +1,3 @@
-// components/TechStackPage.tsx
 import { Box } from "@chakra-ui/react";
 import TechStackListComponent from "../ClientProfile/TechStackClient";
 import { TechStackListProps } from "../../../../../../../public/assets/TechStackList/TechStackList";
