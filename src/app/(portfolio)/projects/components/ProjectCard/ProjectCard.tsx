@@ -10,7 +10,7 @@ import {
 import { FaGithub } from "react-icons/fa6";
 import Link from "next/link";
 import { VscPreview } from "react-icons/vsc";
-type CertificateCardProps = {
+type ProjectCardProps = {
   category: string;
   title: string;
   img: string;
@@ -27,11 +27,11 @@ export default function ProjectCard({
   dateFinished,
   repository,
   liveView,
-}: CertificateCardProps) {
+}: ProjectCardProps) {
   return (
-    <Center py={{ base: 1, md: 6 }}>
+    <Center>
       <Box
-        maxW={"445px"}
+        maxW={"330px"}
         w={"full"}
         bg={"white"}
         boxShadow={"xl"}
@@ -40,7 +40,7 @@ export default function ProjectCard({
         overflow={"hidden"}
       >
         <Box h={"100%"} bg={"gray.100"} mt={-6} mx={-6} mb={6} pos={"relative"}>
-          <Image src={img} alt={altImg} />
+          <Image src={img} alt={altImg} loading={"lazy"} />
         </Box>
         <Stack>
           <Text
@@ -67,7 +67,7 @@ export default function ProjectCard({
                 target={"_blank"}
                 href={`${liveView}`}
                 colorScheme="yellow"
-                fontSize={{ base: "sm", sm: "md", md: "lg" }}
+                fontSize={{ base: "sm", sm: "sm", md: "md" }}
               >
                 Preview
               </Button>
@@ -75,7 +75,7 @@ export default function ProjectCard({
               <Button
                 leftIcon={<VscPreview />}
                 isDisabled
-                fontSize={{ base: "sm", sm: "md", md: "lg" }}
+                fontSize={{ base: "sm", sm: "sm", md: "md" }}
               >
                 Preview
               </Button>
@@ -87,12 +87,16 @@ export default function ProjectCard({
                 as={Link}
                 target={"_blank"}
                 href={`${repository}`}
-                fontSize={{ base: "sm", sm: "md", md: "lg" }}
+                fontSize={{ base: "sm", sm: "sm", md: "md" }}
               >
                 Repository
               </Button>
             ) : (
-              <Button leftIcon={<FaGithub />} isDisabled>
+              <Button
+                leftIcon={<FaGithub />}
+                isDisabled
+                fontSize={{ base: "sm", sm: "sm", md: "md" }}
+              >
                 Repository
               </Button>
             )}

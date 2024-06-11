@@ -22,17 +22,17 @@ export default function ContactComponent() {
   const ContactList = [
     {
       name: "Github",
-      link: "https://github.com/kurniawanmarc93",
+      link: "https://github.com/irfankurniawansuthiono",
       icon: <BsGithub />,
     },
     {
       name: "Linkedin",
-      link: "https://www.linkedin.com/in/kurniawanmarc93",
+      link: "https://www.linkedin.com/in/irfankurniawans/",
       icon: <BsLinkedin />,
     },
     {
       name: "Whatsapp",
-      link: "https://wa.me/6281234567890",
+      link: "https://wa.me/6285159411104",
       icon: <BsWhatsapp />,
     },
   ];

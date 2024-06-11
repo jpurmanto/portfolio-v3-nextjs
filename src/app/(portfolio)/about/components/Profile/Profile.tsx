@@ -1,3 +1,4 @@
+// pages/profile.tsx
 import {
   AbsoluteCenter,
   Divider,
@@ -7,9 +8,25 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import TechStackListComponent from "./ClientProfile/TechStackList";
 import ProfilePicture from "../../../../../../public/home/profile-picture.webp";
-export default function ProfileComponent() {
+import TechStackPage from "./ServerProfile/TechStackPage";
+import TechStackList, {
+  type TechStackListProps,
+} from "~/assets/TechStackList/TechStackList";
+import { getBlur } from "@/app/utils/GetBlur";
+import { IconMdOpenInNew } from "@/app/(portfolio)/components/Home/ClientHome/ClientHome";
+
+const ProfileComponent = async () => {
+  const techStackUpdateBlur: TechStackListProps[] = await Promise.all(
+    TechStackList.map(async (TechStack: any) => {
+      const blurData = await getBlur(TechStack.src);
+      return {
+        ...TechStack,
+        blurDataURL: blurData?.base64 || "",
+      };
+    })
+  );
+
   const year = new Date().getFullYear();
 
   return (
@@ -40,7 +57,12 @@ export default function ProfileComponent() {
         gap={5}
         flexDir={{ base: "column", lg: "row" }}
       >
-        <Box flex={0.5} rounded={"2xl"} overflow={"hidden"}>
+        <Box
+          flex={{ base: 1, lg: 0.5 }}
+          rounded={"2xl"}
+          overflow={"hidden"}
+          maxW={"300px"}
+        >
           <Image
             src={ProfilePicture}
             alt="Profile Picture"
@@ -48,13 +70,13 @@ export default function ProfileComponent() {
           />
         </Box>
         <Flex
-          flex={1}
           flexDir={"column"}
           gap={1}
           p={5}
           bgColor={"gray.200"}
           rounded={"2xl"}
           w={"full"}
+          h={"fit-content"}
         >
           <table>
             <tbody>
@@ -111,9 +133,19 @@ export default function ProfileComponent() {
                   <Text fontSize={{ base: "sm", sm: "md" }}>:</Text>
                 </td>
                 <td>
-                  <Text fontSize={{ base: "sm", sm: "md" }}>
-                    Padang, Sumatera Barat
-                  </Text>
+                  <Flex
+                    justifyContent={"flex-start"}
+                    alignItems={"center"}
+                    gap={{ base: 1, sm: 2 }}
+                    as={"a"}
+                    target="_blank"
+                    href={"https://maps.app.goo.gl/YZYu7uXsfuD94U8FA"}
+                  >
+                    <Text color={"crimson"} fontSize={{ base: "sm", sm: "md" }}>
+                      Padang
+                    </Text>
+                    <IconMdOpenInNew color={"crimson"} />
+                  </Flex>
                 </td>
               </tr>
               <tr>
@@ -145,7 +177,9 @@ export default function ProfileComponent() {
           Tech Stack
         </AbsoluteCenter>
       </Box>
-      <TechStackListComponent />
+      <TechStackPage techStackList={techStackUpdateBlur} />
     </Box>
   );
-}
+};
+
+export default ProfileComponent;

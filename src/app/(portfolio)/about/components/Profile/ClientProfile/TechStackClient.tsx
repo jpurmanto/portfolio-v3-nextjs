@@ -1,12 +1,26 @@
+// components/TechStackClient.tsx
 "use client";
-import TechStackList from "../../../../../../../public/assets/TechStackList/TechStackList";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
-import { Box, Image, useBreakpointValue } from "@chakra-ui/react";
-export default function TechStackListComponent() {
+import { Box, useBreakpointValue } from "@chakra-ui/react";
+import Image from "next/image";
+
+type TechStackListProps = {
+  src: string;
+  alt: string;
+  blurDataURL: string;
+};
+
+type TechStackListComponentProps = {
+  techStackList: TechStackListProps[];
+};
+
+const TechStackListComponent = ({
+  techStackList,
+}: TechStackListComponentProps) => {
   return (
     <Box rounded={"xl"} w={"full"} overflow={"hidden"}>
       <Swiper
@@ -20,15 +34,24 @@ export default function TechStackListComponent() {
         modules={[Autoplay]}
         loop={true}
       >
-        {TechStackList.map((item, index) => (
+        {techStackList.map((item, index) => (
           <SwiperSlide
             key={index}
             className="animate__animated animate__fadeIn"
           >
-            <Image src={item.src} alt={item.alt} />
+            <Image
+              src={item.src}
+              alt={item.alt}
+              width={96}
+              height={96}
+              blurDataURL={item.blurDataURL}
+              placeholder="blur"
+            />
           </SwiperSlide>
         ))}
       </Swiper>
     </Box>
   );
-}
+};
+
+export default TechStackListComponent;

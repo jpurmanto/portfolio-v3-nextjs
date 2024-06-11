@@ -1,47 +1,60 @@
-const TechStackList = [
+export type TechStackListProps = {
+  src: string;
+  alt: string;
+  blurDataURL?: string;
+};
+const TechStackList: TechStackListProps[] = [
   {
-    src: "https://img.icons8.com/color/96/html-5--v1.png",
+    src: "/TechStackIcons/html-5.png",
     alt: "html-5-logo",
   },
   {
-    src: "https://img.icons8.com/color/96/css3.png",
+    src: "/TechStackIcons/css3.png",
     alt: "css-3-logo",
   },
   {
-    src: "https://img.icons8.com/fluency/96/javascript.png",
+    src: "/TechStackIcons/javascript.png",
     alt: "javascript-logo",
   },
   {
-    src: "https://img.icons8.com/color/96/python--v2.pngX/python",
+    src: "/TechStackIcons/python.png",
     alt: "python-logo",
   },
   {
-    src: "https://img.icons8.com/color/96/typescript.png",
+    src: "/TechStackIcons/typescript.png",
     alt: "typescript-logo",
   },
   {
-    src: "https://img.icons8.com/ultraviolet/80/react--v1.png",
+    src: "/TechStackIcons/react.png",
     alt: "react-logo",
   },
   {
-    src: "https://img.icons8.com/fluency/96/node-js.png",
+    src: "/TechStackIcons/node-js.png",
     alt: "node-js-logo",
   },
   {
-    src: "https://img.icons8.com/color/96/chakra-ui.png",
+    src: "/TechStackIcons/chakra-ui.png",
     alt: "chakra-ui-logo",
   },
   {
-    src: "https://img.icons8.com/ios/96/express-js.png",
+    src: "/TechStackIcons/express-js.png",
     alt: "ExpressJS-logo",
   },
   {
-    src: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-mongodb-a-cross-platform-document-oriented-database-program-logo-color-tal-revivo.png",
+    src: "/TechStackIcons/mongodb.png",
     alt: "MongoDB-logo",
   },
   {
-    src: "https://img.icons8.com/color/96/mongoose.png",
+    src: "/TechStackIcons/mongoose.png",
     alt: "Mongoose-logo",
+  },
+  {
+    src: "/TechStackIcons/nextjs.png",
+    alt: "NextJS-logo",
+  },
+  {
+    src: "/TechStackIcons/framer-motion.webp",
+    alt: "Framer-motion-logo",
   },
 ];
 

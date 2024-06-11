@@ -10,7 +10,8 @@ import {
 import "animate.css";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
 import ProjectList from "~/assets/ProjectsList/ProjectsList";
-export default function Project() {
+
+export default async function Project() {
   return (
     <Container maxW={"7xl"} userSelect={"none"}>
       <Box
@@ -43,7 +44,8 @@ export default function Project() {
         <SimpleGrid
           mt={{ base: 5, lg: 10 }}
           columns={{ base: 1, md: 2, lg: 3 }}
-          spacing={{ base: 5, lg: 8 }}
+          spacingX={{ base: 5, lg: 8 }}
+          spacingY={{ base: 8, md: 6 }}
         >
           {ProjectList.slice()
             .reverse()

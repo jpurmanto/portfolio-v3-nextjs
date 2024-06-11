@@ -6,6 +6,7 @@ import { FiPhone } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import { GrProjects } from "react-icons/gr";
 import { usePathname } from "next/navigation";
+import AudioPlayer from "../../AudioPlayer/AudioPlayer";
 
 export default function ClientNavbar() {
   const location = usePathname();
@@ -31,25 +32,29 @@ export default function ClientNavbar() {
       path: "/contact",
     },
   ];
-  return buttonList.map((item) => (
-    <Button
-      key={item.name}
-      as={Link}
-      href={item.path}
-      boxShadow={"2xl"}
-      rounded={"xl"}
-      bgColor={location === item.path ? "yellow.400" : "gray.200"}
-      _hover={{ base: { opacity: 1 }, xl: { opacity: 0.6 } }}
-    >
-      <Flex alignItems={"center"} gap={2}>
-        <Icon as={item.icon} />
-        <Text
-          display={{ base: "none", sm: "block" }}
-          fontSize={{ base: "none", sm: "smaller", md: "medium" }}
+  return (
+    <>
+      {buttonList.map((item) => (
+        <Button
+          key={item.name}
+          as={Link}
+          href={item.path}
+          boxShadow={"2xl"}
+          rounded={"xl"}
+          bgColor={location === item.path ? "yellow.400" : "gray.200"}
+          _hover={{ base: { opacity: 1 }, xl: { opacity: 0.6 } }}
         >
-          {item.name}
-        </Text>
-      </Flex>
-    </Button>
-  ));
+          <Flex alignItems={"center"} gap={2}>
+            <Icon as={item.icon} />
+            <Text
+              display={{ base: "none", sm: "block" }}
+              fontSize={{ base: "none", sm: "smaller", md: "medium" }}
+            >
+              {item.name}
+            </Text>
+          </Flex>
+        </Button>
+      ))}
+    </>
+  );
 }

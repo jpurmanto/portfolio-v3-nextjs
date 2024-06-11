@@ -8,7 +8,7 @@ import {
   AbsoluteCenter,
 } from "@chakra-ui/react";
 import certificateList from "~/assets/CertificateList/CertificateList";
-import CertificateListCardMap from "./ServerCertificate/CertificateListCardMap";
+import CertificateListCardMap from "./CertificateComponent/CertificateListCardMap";
 export default function CertificateComponent() {
   return (
     <Container maxW={"7xl"} mt={8}>

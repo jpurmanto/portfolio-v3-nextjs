@@ -1,7 +1,7 @@
 import certificateList, {
   type Certificate,
 } from "~/assets/CertificateList/CertificateList";
-import CertificateCard from "./CertificateCard";
+import ClientCertificateCard from "../ClientComponent/ClientCertificateCard";
 import { getBlur } from "@/app/utils/GetBlur";
 
 export default async function CertificateListCardMap() {
@@ -18,7 +18,7 @@ export default async function CertificateListCardMap() {
     .slice()
     .reverse()
     .map((certificate) => (
-      <CertificateCard
+      <ClientCertificateCard
         key={certificate.id}
         id={certificate.id}
         from={certificate.from}

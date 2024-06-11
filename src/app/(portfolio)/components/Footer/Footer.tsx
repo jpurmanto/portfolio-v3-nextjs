@@ -17,12 +17,21 @@ export default function Footer() {
         rounded={"2xl"}
       >
         <Text as={"p"} fontSize={"xs"}>
-          &copy;{year} Irfan Kurniawan Suthiono
+          &copy;{year} Irfan Kurniawan. All rights reserved.
         </Text>
         <Text as={"p"} fontSize={"xs"} color={"gray.500"}>
           Icons by{" "}
           <Text as={"a"} href="https://icons8.com" textDecoration={"underline"}>
             Icons8
+          </Text>{" "}
+          and{" "}
+          <Text
+            as={"a"}
+            href="https://react-icons.github.io/react-icons/"
+            textDecoration={"underline"}
+            color={"#E92769"}
+          >
+            react-icons
           </Text>
         </Text>
       </Box>

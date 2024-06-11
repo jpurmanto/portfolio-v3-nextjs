@@ -1,12 +1,12 @@
 "use client";
-import { Box, Flex, Image as ImageChakra } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Certificate } from "~/assets/CertificateList/CertificateList";
 import { useState, useEffect, useRef } from "react";
 type CertificateCardProps = Certificate;
 import { useOnClickOutside } from "usehooks-ts";
-export default function CertificateCard({
+export default function ClientCertificateCard({
   id,
   img,
   altImg,
@@ -87,7 +87,7 @@ export default function CertificateCard({
               layoutId={containerID}
               ref={ref}
               bgColor={"gray"}
-              width={{ base: "90vw", xl: "120vh" }}
+              width={{ base: "90vw", md: "70vw", xl: "120vh" }}
             >
               <MotionImageNextJS
                 layoutId={id.toString()}

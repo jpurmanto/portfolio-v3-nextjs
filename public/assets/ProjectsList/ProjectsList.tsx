@@ -1,4 +1,14 @@
-const ProjectList = [
+export type Projects = {
+  id: number;
+  category: string;
+  title: string;
+  img: string;
+  altImg: string;
+  dateFinished: string;
+  liveView?: string;
+  repository?: string;
+};
+const ProjectList: Projects[] = [
   {
     id: 1,
     category: "Blog",
@@ -141,8 +151,7 @@ const ProjectList = [
     img: "/projects/14.webp",
     altImg: "14.webp",
     dateFinished: "2023",
-    repository:
-      "https://github.com/irfankurniawansuthiono/portfolio-v3",
+    repository: "https://github.com/irfankurniawansuthiono/portfolio-v3",
   },
   {
     id: 15,
@@ -151,9 +160,9 @@ const ProjectList = [
     img: "/projects/NoPreview.webp",
     altImg: "15.webp",
     dateFinished: "2024",
-    repository:
-      "https://github.com/irfankurniawansuthiono/form-mobileApps",
-  },{
+    repository: "https://github.com/irfankurniawansuthiono/form-mobileApps",
+  },
+  {
     id: 16,
     category: "Portfolio",
     title: "Portfolio - NextJS",
@@ -161,9 +170,8 @@ const ProjectList = [
     altImg: "16.webp",
     dateFinished: "2024",
     liveView: "https://irfanks.my.id/",
-    repository:
-      "https://github.com/irfankurniawansuthiono/portfolio-v3-nextjs",
-  }
+    repository: "https://github.com/irfankurniawansuthiono/portfolio-v3-nextjs",
+  },
 ];
 
 export default ProjectList;

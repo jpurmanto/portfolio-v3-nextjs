@@ -37,7 +37,7 @@ const BackToTop = () => {
         colorScheme="yellow"
         _hover={{ bg: "yellow.500" }}
         _active={{ bg: "yellow.600" }}
-        _focus={{ boxShadow: "outline" }}
+        transition={"all 0.3s ease"}
       >
         <BsArrowUp />
       </Button>

@@ -1,6 +1,6 @@
 "use client";
 import { Icon } from "@chakra-ui/react";
 import { MdOpenInNew } from "react-icons/md";
-export const IconMdOpenInNew = () => {
-  return <Icon as={MdOpenInNew} />;
+export const IconMdOpenInNew = ({ ...props }) => {
+  return <Icon as={MdOpenInNew} {...props} />;
 };
