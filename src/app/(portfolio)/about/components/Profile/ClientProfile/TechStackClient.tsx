@@ -11,7 +11,7 @@ import Image from "next/image";
 type TechStackListProps = {
   src: string;
   alt: string;
-  blurDataURL: string;
+  blurDataURL?: string;
 };
 
 type TechStackListComponentProps = {
