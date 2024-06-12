@@ -22,9 +22,11 @@ export default function ClientCertificateCard({
   useEffect(() => {
     if (selectedId) {
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [selectedId]);
 
   const MotionImageNextJS = motion(Image);
