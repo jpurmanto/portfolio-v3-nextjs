@@ -48,7 +48,7 @@ const HomeComponent = () => {
     },
   ];
   return (
-    <Container maxW={"7xl"}>
+    <Container maxW={"6xl"}>
       <Box
         bg={"whitesmoke"}
         boxShadow={"xl"}

@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import AnimatedTextWord from "./AnimatedWelcomeText/AnimatedWelcomeText";
 import { MdOpenInNew } from "react-icons/md";
-
+import { TbMusicOff, TbMusic } from "react-icons/tb";
 export default function ModalWelcome() {
-  const [isShowed, setIsShowed] = useState(true);
+  const [isShowed, setIsShowed] = useState(false);
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const MotionText = motion(Text);
   const MotionFlex = motion(Flex);
@@ -32,15 +32,22 @@ export default function ModalWelcome() {
       });
     }
   }, [isAudioPlaying]);
+
   useEffect(() => {
-    if (isShowed) {
+    if (!isShowed) {
       document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [isShowed]);
 
   return (
     <>
-      {isShowed && (
+      {isShowed == false && (
         <MotionFlex
           initial={{
             opacity: 0,
@@ -72,13 +79,12 @@ export default function ModalWelcome() {
             bgColor={"rgba(255, 255, 255, 0.75)"}
             borderRadius={"12px"}
             py={8}
-            px={{ base: "10vw", xl: "5vw" }}
             overflow={"hidden"}
           >
             <MotionBox color="black" fontWeight={"bold"} textAlign={"center"}>
               <AnimatedTextWord
-                text={"Welcome to my Portfolio"}
-                fontSize={{ base: "xl", md: "3xl" }}
+                text={"Welcome To My Portfolio"}
+                fontSize={{ base: "xl" }}
               />
             </MotionBox>
             <MotionFlex
@@ -86,23 +92,22 @@ export default function ModalWelcome() {
               justifyContent={"center"}
               alignItems={"center"}
               mt={4}
+              w={"full"}
+              as={"a"}
+              href="https://www.youtube.com/watch?v=jVmpzWwWU00&ab_channel=VannySothea"
+              target={"_blank"}
             >
-              <MotionText
-                color="gray.500"
-                fontWeight={"bold"}
-                as={"a"}
-                href="https://www.youtube.com/watch?v=jVmpzWwWU00&ab_channel=VannySothea"
-              >
+              <MotionText fontWeight={"bold"} color="gray.500">
                 Song Credit
               </MotionText>
               <Icon as={MdOpenInNew} size={24} />
             </MotionFlex>
-            <MotionFlex gap={4} justifyContent={"center"} mt={4}>
+            <MotionFlex gap={5} justifyContent={"center"} mt={4}>
               <MotionButton
-                size={{ base: "sm", md: "md" }}
+                size={{ base: "lg" }}
                 onClick={() => {
                   playAudio();
-                  setIsShowed(false);
+                  setIsShowed(true);
                 }}
                 initial={{ y: 80 }}
                 animate={{
@@ -111,11 +116,11 @@ export default function ModalWelcome() {
                 transition={{ duration: 0.7, ease: "easeInOut", delay: 0.1 }}
                 colorScheme="yellow"
               >
-                🔊 with song
+                <Icon as={TbMusic} size={24} />
               </MotionButton>
               <MotionButton
-                size={{ base: "sm", md: "md" }}
-                onClick={() => setIsShowed(false)}
+                size={{ base: "lg" }}
+                onClick={() => setIsShowed(true)}
                 initial={{ y: 80 }}
                 animate={{
                   y: 0,
@@ -123,7 +128,7 @@ export default function ModalWelcome() {
                 transition={{ duration: 0.7, ease: "easeInOut", delay: 0.4 }}
                 colorScheme="red"
               >
-                🔈 without song
+                <Icon as={TbMusicOff} size={24} />
               </MotionButton>
             </MotionFlex>
           </MotionFlex>

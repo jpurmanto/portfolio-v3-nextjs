@@ -11,7 +11,7 @@ import certificateList from "~/assets/CertificateList/CertificateList";
 import CertificateListCardMap from "./CertificateComponent/CertificateListCardMap";
 export default function CertificateComponent() {
   return (
-    <Container maxW={"7xl"} mt={8}>
+    <Container maxW={"6xl"} mt={8}>
       <Box bg={"whitesmoke"} boxShadow={"xl"} rounded={"xl"} p={8}>
         <Heading
           textAlign={"center"}

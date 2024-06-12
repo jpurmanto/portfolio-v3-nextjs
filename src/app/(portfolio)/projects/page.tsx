@@ -13,7 +13,7 @@ import ProjectList from "~/assets/ProjectsList/ProjectsList";
 
 export default async function Project() {
   return (
-    <Container maxW={"7xl"} userSelect={"none"}>
+    <Container maxW={"6xl"} userSelect={"none"}>
       <Box
         bg={"whitesmoke"}
         boxShadow={"2xl"}

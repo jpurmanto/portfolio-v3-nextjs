@@ -3,7 +3,7 @@ import ProfileComponent from "./components/Profile/Profile";
 import AboutComponent from "./components/About/About";
 export default function About() {
   return (
-    <Container maxW={"7xl"} userSelect={"none"}>
+    <Container maxW={"6xl"} userSelect={"none"}>
       <Flex
         flexDir={{ base: "column", md: "row" }}
         gap={10}

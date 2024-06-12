@@ -7,7 +7,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import Image from "next/image";
-import ProfilePicture from "../../../../../../public/home/profile-picture.webp";
+import ProfilePicture from "~/home/profile-picture.webp";
 import TechStackPage from "./ServerProfile/TechStackPage";
 import TechStackList, {
   type TechStackListProps,
@@ -56,10 +56,11 @@ const ProfileComponent = async () => {
         flexDir={{ base: "column", lg: "row" }}
       >
         <Box
-          flex={{ base: 1, lg: 0.5 }}
+          flex={{ base: 1, lg: 0.6 }}
           rounded={"2xl"}
           overflow={"hidden"}
-          maxW={"300px"}
+          objectFit={"cover"}
+          objectPosition={"center"}
         >
           <Image
             src={ProfilePicture}
@@ -68,13 +69,13 @@ const ProfileComponent = async () => {
           />
         </Box>
         <Flex
-          flexDir={"column"}
+          flex={1}
           gap={1}
-          p={5}
-          bgColor={"gray.200"}
+          bgColor={"gray.300"}
           rounded={"2xl"}
           w={"full"}
-          h={"fit-content"}
+          px={5}
+          py={5}
         >
           <table>
             <tbody>
