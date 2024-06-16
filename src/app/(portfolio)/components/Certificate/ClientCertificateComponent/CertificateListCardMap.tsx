@@ -5,38 +5,37 @@ import Image from "next/image";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import CertificatePreviewList from "~/assets/CertificateList/CertificatPreviewList";
 import "react-photo-view/dist/react-photo-view.css";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 export default function CertificateListCardMap() {
   const MotionBox = motion(Box);
+  const MotionPhotoProvider = motion(PhotoProvider);
   const reversedCertificatePreviewList =
     CertificatePreviewList.slice().reverse();
 
-  const itemVariants = (index: number) => {
-    return {
-      hidden: { opacity: 0, y: 50 },
-      show: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.3 },
-        delay: 0.05 * index,
-      },
-    };
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3 },
+    },
   };
 
   return (
-    <PhotoProvider>
+    <MotionPhotoProvider>
       {CertificateList.slice()
         .reverse()
         .map((certificate, index) => (
           <MotionBox
+            rounded={"md"}
+            overflow={"hidden"}
             key={index + 1}
             variants={itemVariants}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.5 }}
             whileHover={{ scale: 1.1 }}
-            custom={index}
           >
             <PhotoView src={reversedCertificatePreviewList[index].img}>
               <Image
@@ -50,6 +49,6 @@ export default function CertificateListCardMap() {
             </PhotoView>
           </MotionBox>
         ))}
-    </PhotoProvider>
+    </MotionPhotoProvider>
   );
 }
