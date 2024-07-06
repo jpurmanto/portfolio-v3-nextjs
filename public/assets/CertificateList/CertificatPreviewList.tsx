@@ -264,6 +264,14 @@ const CertificatePreviewList: Certificate[] = [
     altImg: "Certificate 32",
     dateObtained: "2024",
   },
+  {
+    id: 33,
+    from: "CODEPOLITAN",
+    title: "MEVN Full-Stack Web Apps",
+    img: "/home/certificates/certificate_33.webp",
+    altImg: "Certificate 33",
+    dateObtained: "2024",
+  },
 ];
 
 export default CertificatePreviewList;
