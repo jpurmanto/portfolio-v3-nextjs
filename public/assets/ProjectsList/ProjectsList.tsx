@@ -160,7 +160,6 @@ const ProjectList: Projects[] = [
     img: "/projects/NoPreview.webp",
     altImg: "15.webp",
     dateFinished: "2024",
-    repository: "https://github.com/irfankurniawansuthiono/form-mobileApps",
   },
   {
     id: 16,
