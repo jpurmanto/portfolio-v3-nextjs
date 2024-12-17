@@ -41,7 +41,9 @@ import certificate30 from "~/home/certificates/certificate_30.webp";
 import certificate31 from "~/home/certificates/certificate_31.webp";
 import certificate32 from "~/home/certificates/certificate_32.webp";
 import certificate33 from "~/home/certificates/certificate_33.webp";
-
+import certificate34 from "~/home/certificates/certificate_34.webp";
+import certificate35 from "~/home/certificates/certificate_35.webp";
+import certificate36 from "~/home/certificates/certificate_36.webp";
 const CertificateList = [
   certificate1,
   certificate2,
@@ -75,6 +77,9 @@ const CertificateList = [
   certificate30,
   certificate31,
   certificate32,
-  certificate33
+  certificate33,
+  certificate34,
+  certificate35,
+  certificate36
 ];
 export default CertificateList;

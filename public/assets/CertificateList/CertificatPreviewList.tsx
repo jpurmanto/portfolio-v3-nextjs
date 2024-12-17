@@ -272,6 +272,30 @@ const CertificatePreviewList: Certificate[] = [
     altImg: "Certificate 33",
     dateObtained: "2024",
   },
+  {
+    id: 34,
+    from : "JADI HACKER",
+    title: "Ghost In The Database",
+    img: "/home/certificates/certificate_34.webp",
+    altImg: "Certificate 34",
+    dateObtained: "2024",
+  },
+  {
+    id: 35,
+    from : "HUAWEI Talent Program",
+    title: "AI Basics: Overview Of AI",
+    img: "/home/certificates/certificate_35.webp",
+    altImg: "Certificate 35",
+    dateObtained: "2024",
+  },
+  {
+    id: 36,
+    from : "HUAWEI Talent Program",
+    title: "AI Basics: Overview Of AI (TRAINING)" ,
+    img: "/home/certificates/certificate_36.webp",
+    altImg: "Certificate 36",
+    dateObtained: "2024",
+  }
 ];
 
 export default CertificatePreviewList;
